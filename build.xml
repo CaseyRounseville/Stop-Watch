@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<project name="Stop Watch" basedir=".">
+	<target name="compile">
+		<javac srcdir="src" destdir="bin" />
+		<exec executable="DateTime.bat" />
+	</target>
+	
+	<target name="run">
+		<java classname="main.StopWatch" classpath="bin;${java.home}\lib\ext\jfxrt.jar" />
+		<exec executable="DateTime.bat" />
+	</target>
+	
+	<target name="clean">
+		<delete dir="bin" />
+		<mkdir dir="bin" />
+		<exec executable="DateTime.bat" />
+	</target>
+</project>
